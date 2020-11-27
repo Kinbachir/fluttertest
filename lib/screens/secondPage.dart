@@ -27,7 +27,30 @@ class _ScendPageViewState extends State<ScendPageView> {
     return Scaffold(
       appBar: AppBar(title: Text("title".trArgs(['John']))),
       body: Center(
-        child: Text(box.read("email")),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            RaisedButton.icon(
+              color: Colors.green,
+              textColor: Colors.white,
+              icon: Icon(Icons.g_translate_outlined),
+              label: Text("back".tr),
+              onPressed: () {
+                box.erase();
+                Get.offAllNamed("/main");
+              },
+            ),
+            RaisedButton.icon(
+              color: Colors.green,
+              textColor: Colors.white,
+              icon: Icon(Icons.g_translate_outlined),
+              label: Text("next".tr),
+              onPressed: () {
+                Get.toNamed("/thred");
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

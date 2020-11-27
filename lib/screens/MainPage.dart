@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:testflutter/secondPage.dart';
+import 'package:testflutter/screens/secondPage.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key key}) : super(key: key);
@@ -36,7 +36,7 @@ class _MainViewState extends State<MainView> {
           onPressed: () {
             // Add your onPressed code here!
             box.write("email", emailCotroller.text);
-            Get.to(SecondPage());
+            Get.offAll(SecondPage());
           },
           label: Text('next'.tr),
           icon: Icon(Icons.arrow_right_outlined),

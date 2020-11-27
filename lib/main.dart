@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testflutter/mytrans.dart';
 import 'package:get_storage/get_storage.dart';
-import 'MainPage.dart';
+import 'Controller/Bindding/BindS.dart';
+import 'screens/MainPage.dart';
+import 'screens/thred.dart';
 
 void main() async {
   await GetStorage.init();
@@ -20,6 +22,7 @@ void main() async {
     fallbackLocale: Locale("fr"),
     getPages: [
       GetPage(name: '/main', page: () => MainPage()),
+      GetPage(name: '/thred', page: () => Thred(), binding: BindS()),
     ],
   ));
 }
